@@ -12,7 +12,6 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var mongoose = require('mongoose');
 var session = require('express-session');
-var flash = require('connect-flash');
 
 mongoose.connect('mongodb://localhost/tareas', function(err) {
   if(!err) {
