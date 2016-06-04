@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+  body
+    h1 New task view
+    div.col-xs-12
+      div.col-xs-6
+        form(role='form', method='post', action='/tasks')
+          fieldset
+            legend Add a task
+            div.form-group
+              label Task
+              input(name='task', class='form-control')
+              label Details
+              input(name='details', class='form-control')
+            div.col-xs-1
+              button.btn.btn-primary(type='submit') Submit
+            div.col-xs-2
+              button.btn.btn-default(type='reset') Clear

@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+  h1 Edit task view
+  form(method='POST', role='form', action='/tasks/' + task._id + '?_method=PUT')
+    fieldset
+      legend Editing task
+      div.form-group.col-xs-12
+        div.col-xs-12
+          div.col-xs-6
+            label Task
+              input.form-control(name='task', value="#{task.task}")
+            label Details
+              input.form-control(name='details', value='#{task.details}')
+        div.col-xs-12
+        div.col-xs-12
+          div.col-xs-6
+            button.btn.btn-primary(type='submit') Submit
+            button.btn.btn-default(type='reset') Clear

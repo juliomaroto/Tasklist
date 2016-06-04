@@ -1,0 +1,28 @@
+extends ..\layout
+
+block content
+  body
+    div.row
+      div.col-md-2.col-md-offset-5
+        h1 Tareas
+          p
+          -if(messages)
+            div#note #{messages}
+          p
+            a(href='/tasks/new', class='btn btn-primary') Add a Task
+        - if(docs)
+            table.table.table-striped
+              tr
+                th Task
+                th
+              each task in docs
+                tr
+                  td #{task.task}
+                  td #{task.details}
+                  td
+                    a.btn(href="/tasks/#{task.id}/edit", class='btn btn-primary') Edit
+                  td
+                    form(method='POST', role='form', action='/tasks/' + task._id + '?_method=DELETE')
+                      button.btn.btn-danger(type='submit') Delete
+        - else
+            p.col-xs-12 You don't have any tasks!

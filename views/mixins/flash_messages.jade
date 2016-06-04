@@ -1,0 +1,7 @@
+mixin message-flashs(messages)
+  -if(messages.warning)
+   div.alert-flash.warning
+    p= messages.warning
+  -if(messages.info)
+   div(data-alert='alert').alert-flash.success
+    p= messages.info
