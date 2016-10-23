@@ -147,8 +147,4 @@ app.use(function(err, req, res, next) {
   });
 });
 
-http.listen(process.env.PORT || 3000, function(){
-  console.log('listening on', http.address().port);
-});
-
 module.exports = app;
